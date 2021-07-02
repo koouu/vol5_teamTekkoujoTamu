@@ -6,9 +6,9 @@
         <%= micropost.content %>
         <%= image_tag micropost.display_image if micropost.image.attached? %>
         <% if current_user.liked_by?(micropost.id) %>
-          <td>いいねを外す</td>
+          <td><%= link_to 'いいねを外す', destroy_like_path(micropost), method: :DELETE %></td>
         <% else %>
-          <td>いいね</td>
+          <td><%= link_to 'いいね', create_like_path(micropost), method: :POST %></td>
         <% end %>
     </span>
     <span class="timestamp">
