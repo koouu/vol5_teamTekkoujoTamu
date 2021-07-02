@@ -1,3 +1,4 @@
+<!--
 <% if logged_in? %>
   <div class="row">
     <aside class="col-md-4">
@@ -25,3 +26,69 @@
   </div>
 
 <% end %>
+-->
+<%=javascript_pack_tag 'main'%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<% if logged_in? %>
+  <div id="wrap">
+    <div class="content">
+    <div id="parent">
+      <div id="child1">
+        <h1 id="home-cr" class="home solid2">ホーム</h1>
+        <div id="home" class="long">
+          <h1>なんだいな</h1>
+        </div>
+      </div>
+      <div id="child2">
+        <h1 class="solid1">進捗を報告しよう</h1>
+        <div class="long">
+          <%= form_for(@micropost) do |f| %>
+          <div class="cp_iptxt">
+            <label class="input_title cnb">
+              <%= f.text_field :title, placeholder: "タイトル" %>
+            </label>
+            <%= f.text_area :content, placeholder: "進捗どんな感じ？", class:"cnb m-top cnb-cont gray"%>
+          </div>
+          <%= f.submit "Post", class: "btn-send" %>
+        <%end%>
+          <!--
+          <form onsubmit="return false" action="#" method="post">
+            <div class="cp_iptxt">
+              <label class="input_title cnb">
+              <input type="text" placeholder="タイトル"　name="title">
+              </label>
+              <textarea class="cnb m-top cnb-cont gray" name="comment" cols="50" rows="10" placeholder="進捗どんな感じ？"></textarea>
+              <input type="submit" value="送信する" class="btn-send" style="margin-left:450px;">
+
+            </div>
+
+          </form>
+          -->
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <% else %>
+    <div id="wrap">
+    <div class="content">
+    <div id="parent">
+      <div id="child1">
+        <h1 id="home-cr" class="home solid2">ホーム</h1>
+        <div id="home" class="long">
+          <h1>なんだいな</h1>
+        </div>
+      </div>
+      <div id="child2">
+        <h1 class="solid1">進捗を報告しよう</h1>
+        <div class="long">
+          <h2 style="margin-left:100px;">まずはアカウントを作成しよう！</h2>
+          <section id="section1">
+            <%= link_to "登録", signup_path, class: "btn-09" %>
+          </section>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <%end%>
