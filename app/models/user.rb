@@ -10,6 +10,8 @@ class User < ApplicationRecord
     validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
     has_many :microposts, dependent: :destroy
+
+    has_many :likes
   
     # 渡された文字列のハッシュ値を返す
     def User.digest(string)
@@ -41,5 +43,10 @@ class User < ApplicationRecord
     # ユーザーのログイン情報を破棄する
     def forget
       update_attribute(:remember_digest, nil)
+    end
+
+    #いいね？
+    def liked_by?(micropost_id)
+      likes.where(micropost_id: micropost_id).exists?
     end
   end
