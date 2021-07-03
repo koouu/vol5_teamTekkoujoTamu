@@ -5,6 +5,9 @@
       <h1>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        <div class="conts">
+          <textarea class="posted-cont" name="posted1" cols="40" rows="10" readonly><%= @user.profile %></textarea>
+        </div>
       </h1>
     </section>
   </aside>

@@ -1,19 +1,24 @@
 <% @microposts.each do |post| %>
     <div class="posted-place">
-          <div class=user-cont>
+        <div class=user-cont>
             <%= gravatar_for post.user %>
             <p><span class="posted-user"><%= post.user.name %></span></p>
-          </div>
-          <p><span class="posted-title"><%= post.title %></span></p>
-          <div class="conts">
+        </div>
+        <p><span class="posted-title"><%= post.title %></span></p>
+        <div class="conts">
             <textarea class="posted-cont" name="posted1" cols="40" rows="10" readonly><%= post.content %></textarea>
             <img class="cont-img" src="img/icon.png"></img>
-          </div>
-          <% if current_user.liked_by?(post.id) %>
-            <td><%= link_to 'いいねを外す', destroy_like_path(post), method: :DELETE %></td>
-          <% else %>
-            <td><%= link_to 'いいね', create_like_path(post), method: :POST %></td>
-          <% end %>
+        </div>
+        <% if logged_in? %>
+            <% if current_user.liked_by?(post.id) %>
+                <td><%= link_to 'いいねを外す', destroy_like_path(post), method: :DELETE %></td>
+            <% else %>
+                <td><%= link_to 'いいね', create_like_path(post), method: :POST %></td>
+            <% end %>
+        <% else %>
+
+        <% end %>
+
     </div>
      <!--   
     <tr>
