@@ -1,8 +1,12 @@
 <header id="header">　
     <div class="boxA">
       <div class="logo">
-        <a href=root_path><img src="img/icon.png" alt="page_logo"></a>
-        <a href="index.html"><img src="img/logo3.png" alt="page_logo"></a>
+        <%= link_to root_path do %>
+          <%= image_tag 'img/Develotter_icon.png', class: 'header-icon' %>
+        <% end %>
+        <%= link_to root_path do %>
+          <%= image_tag 'img/Develotter_logo.png', class: 'header-logo' %>
+        <% end %>
       </div>
       <nav>
         <ul class="global-nav">
