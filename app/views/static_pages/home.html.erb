@@ -44,11 +44,15 @@
         <div class="long">
           <%= form_for(@micropost) do |f| %>
           <div class="cp_iptxt">
-            <label class="input_title cnb">
+            <label id="label" class="input_title cnb">
               <%= f.text_field :title, placeholder: "タイトル" %>
             </label>
             <%= f.text_area :content, placeholder: "進捗どんな感じ？",size:"50x6", class:"cnb m-top cnb-cont gray"%>
           </div>
+          <label class="btn-flat-dashed-filled" >
+            ファイルをアップして下さい
+            <input type="file"　id="imgcnt" style="display:none;">
+          </label>
           <%= f.submit "Post", class: "btn-send" %>
         <%end%>
           <!--
