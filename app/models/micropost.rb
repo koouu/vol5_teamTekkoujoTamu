@@ -11,6 +11,7 @@ class Micropost < ApplicationRecord
                                       message: "should be less than 5MB" }
 
   has_many :likes
+  validates :giturl, presence: true, length: { maximum: 140 }
 
   def display_image
     image.variant(resize_to_limit: [500, 500])
