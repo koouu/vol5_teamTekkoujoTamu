@@ -64,10 +64,14 @@
       <div class="long">
         <form onsubmit="return false" action="#" method="post">
           <div class="cp_iptxt">
-          	<label class="input_title cnb">
+          	<label id="label" class="input_title cnb">
           	<input type="text" placeholder="タイトル"　name="title">
             </label>
             <textarea class="cnb m-top cnb-cont" name="comment" cols="50" rows="10" placeholder="進捗どんな感じ？"></textarea>
+            <label class="btn-flat-dashed-filled">
+              ファイルをアップして下さい
+              <input type="file"　id="imgcnt">
+            </label>
             <input type="submit" value="送信する" class="btn-send" style="margin-left:450px;">
 
           </div>
