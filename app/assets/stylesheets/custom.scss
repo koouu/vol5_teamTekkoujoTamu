@@ -7,7 +7,7 @@ placeholder{
 body{
   margin:0;
   background-color: #FFFFFF;
-  min-width: 1000px;
+  min-width: 1500px;
 }
 p,h1,h2,h3,h4,h5,h6{
   margin-top:0;
@@ -18,7 +18,7 @@ p,h1,h2,h3,h4,h5,h6{
   top:0;
   width: 100%;
   min-width: 1000px;
-  z-index:90;
+  z-index: 90;
 }
 ul{
   margin:0;
@@ -36,6 +36,7 @@ ul{
   text-decoration: underline;
 }
 footer{
+  text-align: center;
   display: flex;
   color:#FFFFFF;
   padding: 20px 0;
@@ -55,23 +56,55 @@ footer{
   float:right;
   margin-top: 40px;
   display: flex;
+  position: relative;
 }
 .global-nav li{
   float:left;
   margin:0 20px;
   font-size: 20px;
   list-style:none;
+}
+.global-nav a{
+  display: block;
+}
+ul.global-nav ul{
+  top:30px;
+  margin: 0px;         /* ★2:サブメニュー外側の余白(ゼロ) */
+  padding: 0px;        /* ★3:サブメニュー内側の余白(ゼロ) */
+  position: absolute;
+  display: none;
+}
+ul.global-nav ul.nav2 li{
+
+  padding: 5px 20%;
+  margin: 0;
+}
+
+ul.global-nav li:hover ul.nav2{
+   display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
+   background-color: #000000;
+   position: absolute;
+   z-index: 100;
+}
+
+.downlist{
   color: #FFFFFF;
+  font-size: 2vmin;
+  text-decoration: none;
+}
+.downlist:hover{
+  text-decoration: underline 4px;
 }
 .content{
 
   margin:0 auto;
   }
 .home{
-  padding-left: 100px;
+  padding-left: 0;
   position: fixed;
   width: 60%;
   background-color: #FFFFFF;
+  z-index: 0;
 }
 .solid1{
   border-bottom: solid 4px #b20000;
@@ -81,7 +114,6 @@ footer{
 }
 .long{
   height: 5000px;
-
 }
 .cnb{
   margin-left: 20px;
@@ -92,6 +124,12 @@ footer{
 .cnb-cont{
   resize:none;
   font-size: 20px;
+  border-radius: 0.47em;
+  border: 2px solid #5E5E5E;
+}
+.cnb-cont:focus{
+  outline:none;
+  border: 3px solid #000000;
 }
 .footer_rule{
   color:#FFFFFF;
@@ -112,7 +150,8 @@ footer{
 }
 .copy{
   margin-top: 10px;
-  margin-left: 100px;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 #child1 {
@@ -233,65 +272,61 @@ a.btn_09:hover {
   text-align: center;
 }
 
+.posted-user{
+  padding-left: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.posted-title{
+  margin-left: 50px;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 2px solid #67c5ff;
+}
+.posted-cont{
+  float: right;
+  border: 2px solid;
+  border-radius: 0.47em;
+  resize:none;
+  font-size: 20px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
+.posted-cont:focus{
+  outline: none;
 
+}
 
-
+.posted-cont::placeholder{
+  color:#000000;
+}
+.conts{
+  display: flex;
+}
+.cont-img{
+  margin-left: 10px;
+  width: 30%;
+}
+.user-img{
+  display: flex;
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  width:  30px;       /* ※縦横を同値に */
+  height: 30px;
+  border: 2px solid #FFC107;
+}
+.user-cont{
+  display: flex;
+  margin-left: 50px;
+}
+.posted-place{
+  padding-top: 10px;
+  border-bottom: 5px double #AAAAAA;
+  padding-bottom: 5px;
+  border-width: 100%;
+}
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-  z-index:100;
-}
 
 /* forms */
-
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
-  z-index:100;
-}
-
-input {
-  height: auto !important;
-  z-index:100;
-}
-
-#error_explanation {
-  color: red;
-  ul {
-    color: red;
-    margin: 0 0 30px 0;
-  }
-  z-index:100;
-}
-
-.field_with_errors {
-  @extend .has-error;
-  .form-control {
-    color: $state-danger-text;
-  }
-  z-index:100;
-}
-
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
-  z-index:100;
-}
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-  z-index:100;
-}

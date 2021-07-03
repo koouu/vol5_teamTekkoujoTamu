@@ -1,8 +1,21 @@
 <% @microposts.each do |post| %>
+    <div class="posted-place">
+          <div class=user-cont>
+            <%= gravatar_for post.user %>
+            <p><span class="posted-user"><%= post.user.name %></span></p>
+          </div>
+          <p><span class="posted-title"><%= post.title %></span></p>
+          <div class="conts">
+            <textarea class="posted-cont" name="posted1" cols="40" rows="10" readonly><%= post.content %></textarea>
+            <img class="cont-img" src="img/icon.png"></img>
+          </div>
+    </div>
+     <!--   
     <tr>
         <td><%= post.user.name %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
     </tr>
+    -->
 <% end %>
 

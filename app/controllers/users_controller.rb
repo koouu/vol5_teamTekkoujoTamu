@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.icon.attach(params[:user][:icon])
     if @user.save
       log_in @user
       flash[:success] = "Welcome to the Sample App!"
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    
   end
 
   def update
@@ -51,7 +53,7 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password,
-                                 :password_confirmation)
+                                 :password_confirmation,:icon)
   end
 
   # beforeアクション

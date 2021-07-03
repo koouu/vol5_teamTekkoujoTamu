@@ -11,6 +11,14 @@ class User < ApplicationRecord
 
     has_many :microposts, dependent: :destroy
 
+    has_one_attached :icon
+
+    validates :icon,    content_type: { in: %w[image/jpeg image/gif image/png],
+                            message: "must be a valid image format" },
+                        size:         { less_than: 5.megabytes,
+                            message: "should be less than 5MB" }
+
+
     has_many :likes
   
     # 渡された文字列のハッシュ値を返す
@@ -49,4 +57,9 @@ class User < ApplicationRecord
     def liked_by?(micropost_id)
       likes.where(micropost_id: micropost_id).exists?
     end
-  end
+
+    #icon リサイズ
+    def display_icon
+      icon.variant(resize_to_limit: [50, 50])
+    end
+end
