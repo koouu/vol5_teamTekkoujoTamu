@@ -11,14 +11,20 @@
   <header id="header">　
     <div class="boxA">
       <div class="logo">
-        <a href="index.html"><img src="img/icon.png" alt="page_logo"></a>
+        <a href="index.html"><img src="img/icon1.png" alt="page_logo"></a>
         <a href="index.html"><img src="img/logo3.png" alt="page_logo"></a>
       </div>
       <nav>
         <ul class="global-nav">
           <li><a class="a1" href="index.html">ページ概要</a></li>
           <li><a class="a1" href="index.html">投稿する</a></li>
-          <li><a class="a1" href="index.html">ねる</a></li>
+          <li><a class="a1" style="padding-right:50px;" href="index.html">アカウント</a>
+            <ul class="nav2" style="z-index:100;">
+              <li class="solid1"><a class=" downlist" href="index.html">ログアウト</a></li>
+              <li class="solid1"><a class=" downlist" href="index.html">プロフィール</a></li>
+              <li class="solid1"><a class=" downlist" href="index.html">ユーザー設定</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
@@ -29,7 +35,28 @@
     <div id="child1">
       <h1 id="home-cr" class="home solid2">ホーム</h1>
       <div id="home" class="long">
-        <h1>なんだいな</h1>
+        <div class="posted-place">
+          <div class=user-cont>
+            <img class="user-img" src="img/icon.png"></img>
+            <p><span class="posted-user">なんだいな</span></p>
+          </div>
+          <p><span class="posted-title">でべろったー</span></p>
+          <div class="conts">
+            <textarea class="posted-cont" name="posted1" cols="40" rows="10" placeholder="進捗生えたからねるだいなばんだーれだいなそー" readonly></textarea>
+            <img class="cont-img" src="img/icon.png"></img>
+          </div>
+        </div>
+        <div class="posted-place">
+          <div class=user-cont>
+            <img class="user-img" src="img/icon.png"></img>
+            <p><span class="posted-user">なんだいな</span></p>
+          </div>
+          <p><span class="posted-title">でべろったー</span></p>
+          <div class="conts">
+            <textarea class="posted-cont" name="posted1" cols="40" rows="10" placeholder="進捗生えたからねるだいなばんだーれだいなそー" readonly></textarea>
+            <img class="cont-img" src="img/icon.png"></img>
+          </div>
+        </div>
       </div>
     </div>
     <div id="child2">
@@ -40,7 +67,7 @@
           	<label class="input_title cnb">
           	<input type="text" placeholder="タイトル"　name="title">
             </label>
-            <textarea class="cnb m-top cnb-cont gray" name="comment" cols="50" rows="10" placeholder="進捗どんな感じ？"></textarea>
+            <textarea class="cnb m-top cnb-cont" name="comment" cols="50" rows="10" placeholder="進捗どんな感じ？"></textarea>
             <input type="submit" value="送信する" class="btn-send" style="margin-left:450px;">
 
           </div>
