@@ -16,6 +16,7 @@ p,h1,h2,h3,h4,h5,h6{
   width: 100%;
   min-width: 1000px;
   z-index: 90;
+  margin-bottom: 0px;
 }
 ul{
   margin:0;
@@ -48,6 +49,14 @@ footer{
   float:left;
   margin-left: 70px;
   margin-top: 0px;
+}
+.logo-size{
+height: 70.2px;
+width: 400px;
+}
+.icon{
+height: 64px;
+width: 64px;
 }
 .global-nav{
   float:right;
@@ -161,7 +170,7 @@ ul.global-nav li:hover ul.nav2{
     position: fixed;
     right: 0;
     width: 40%;
-    min-width: 270px;
+    min-width: 550px;
   }
 
 @media (min-width: 0px) {
@@ -229,9 +238,6 @@ a.btn_09:hover {
 }
 
 .cp_iptxt {
-  <!--
-  position: relative;
-  -->
   width: 80%;
   margin: 30px 3%;
 }
@@ -268,7 +274,7 @@ a.btn_09:hover {
   color: white;
 }
 
-.signup{
+.signup-title{
   text-align: center;
 }
 
