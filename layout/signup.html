@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>Develotter</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="main.js"></script>
+  <script src="signup.js"></script>
   <link rel="stylesheet" href="style1.css">
 </head>
 <body>
@@ -24,9 +24,27 @@
     </div>
   </header>
   <div id="wrap">
-    <div class="content long">
-      <h1 class="signup"><img src="img/welcom.png" style="border-bottom: solid 4px #67c5ff;"></img></h1>
-      
+    <div class="content">
+      <h1 class="signup-title"><img src="img/welcom.png" style="border-bottom: solid 4px #67c5ff;"></img></h1>
+      <form onsubmit="return false" action="#" method="post">
+        <div class="cp_iptxt">
+          <label id="label" class="input_title cnb">
+          <input type="text" placeholder="ユーザー名"　name="title">
+          </label>
+          <label id="label" class="input_title cnb">
+          <input type="text" placeholder="メール"　name="title">
+          </label>
+          <label id="label" class="input_title cnb">
+          <input type="text" placeholder="パスワード"　name="title">
+          </label>
+          <label id="label" class="input_title cnb">
+          <input type="text" placeholder="パスワード再確認"　name="title">
+          </label>
+          <input type="submit" value="登録する" class="btn-send" style="margin-left:auto; margin:right:auto; margin-top:10px;">
+
+        </div>
+
+      </form>
     </div>
   </div>
   <footer>
