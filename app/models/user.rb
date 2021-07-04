@@ -21,7 +21,7 @@ class User < ApplicationRecord
 
     has_many :likes
 
-    validates :profile, presence: true, length: { maximum: 140 }
+    validates :profile, length: { maximum: 140 }
   
     # 渡された文字列のハッシュ値を返す
     def User.digest(string)

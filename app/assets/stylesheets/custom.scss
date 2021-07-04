@@ -28,6 +28,7 @@ ul{
 .a1{
   color: #3583aa;
   text-decoration: none;
+  z-index: 100;
 }
 .a1:visited{
   color:#3583aa;
@@ -52,6 +53,12 @@ footer{
   margin-left: 70px;
   margin-top: 0px;
 }
+.iine-size{
+  height: 30px;
+  width: 30px;
+  margin-left: 50px;
+  margin-top: 10px;
+}
 .global-nav{
   float:right;
   margin-top: 40px;
@@ -68,7 +75,7 @@ footer{
   display: block;
 }
 ul.global-nav ul{
-  top:30px;
+  top:25px;
   margin: 0px;         /* ★2:サブメニュー外側の余白(ゼロ) */
   padding: 0px;        /* ★3:サブメニュー内側の余白(ゼロ) */
   position: absolute;
@@ -84,7 +91,7 @@ ul.global-nav li:hover ul.nav2{
    display: block;      /* ★5:マウスポインタが載っている項目の内部にあるリストを表示する */
    background-color: #000000;
    position: absolute;
-   z-index: 100;
+   z-index: 1000;
 }
 
 .downlist{
@@ -94,6 +101,7 @@ ul.global-nav li:hover ul.nav2{
 }
 .downlist:hover{
   text-decoration: underline 4px;
+  color: #FFFFFF;
 }
 .content{
 
@@ -280,8 +288,14 @@ a.btn_09:hover {
 }
 .posted-title{
   margin-left: 50px;
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
+  border-bottom: 3px solid #67c5ff;
+}
+.posted-link{
+  margin-left: 50px;
+  font-size: 15px;
+  font-weight: 400;
   border-bottom: 2px solid #67c5ff;
 }
 .posted-cont{
@@ -324,6 +338,13 @@ a.btn_09:hover {
   border-bottom: 5px double #AAAAAA;
   padding-bottom: 5px;
   border-width: 100%;
+}
+.posted-like-count{
+  font-size:20px;
+  font-weight: 300;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding-top: 5px;
 }
 
 .btn-flat-dashed-filled {

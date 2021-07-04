@@ -1,11 +1,23 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
+<%= image_tag 'img/welcome.png' ,style:"border-bottom: solid 4px #67c5ff; height:100px; width:1000px; padding-left:100px; padding-right:100px;" %>
     <%= form_with(model: @user, local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name %>
+      <div class="cp_iptxt long">
+          <label id="label" class="input_title cnb" style="display:block; margin-bottom:10px;">
+            <%= f.text_field :name, placeholder:"ユーザー名"%>
+          </label>
+          <label id="label" class="input_title cnb" style="display:block; margin-bottom:10px;">
+            <%= f.text_field :email, placeholder:"メール" %>
+          </label>
+          <label id="label" class="input_title cnb"style="display:block; margin-bottom:10px;">
+            <%= f.text_field :password, placeholder:"パスワード" %>
+          </label>
+          <label id="label" class="input_title cnb"style="display:block;margin-bottom:10px;">
+            <%= f.text_field :password_confirmation, placeholder:"パスワード確認" %>
+          </label>
+          <%= f.submit "Create my account",class:"btn-send", style:"margin-left:auto; margin:right:auto; margin-top:10px;"%>
+      </div>
+      <!--
       <%= f.text_field :name, class: 'form-control' %>
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
@@ -14,6 +26,5 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
       <%= f.submit "Create my account", class: "btn btn-primary" %>
+      -->
     <% end %>
-  </div>
-</div>

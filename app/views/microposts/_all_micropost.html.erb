@@ -4,22 +4,29 @@
             <%= gravatar_for post.user %>
             <p><span class="posted-user"><%= post.user.name %></span></p>
         </div>
-        <p><span class="posted-title"><%= post.title %></span></p>
+        <p style="margin-bottom:2px;"><span class="posted-title"><%= post.title %></span></p>
+        
+        <td><%= link_to post.giturl, post.giturl,class:"posted-link" %></td>
         <div class="conts">
             <textarea class="posted-cont" name="posted1" cols="40" rows="10" readonly><%= post.content %></textarea>
-            <%= image_tag post.display_image if post.image.attached? %>
+            <%= image_tag post.display_image, style:"margin-left:10px; border-radius:15px;" if post.image.attached? %>
         </div>
-        <li><%= link_to post.giturl, post.giturl %></li>
+        <div style="display:flex;margin-right:50px;">
         <% if logged_in? %>
             <% if current_user.liked_by?(post.id) %>
-                <td><%= link_to 'いいねを外す', destroy_like_path(post), method: :DELETE %></td>
+                <%= link_to destroy_like_path(post), method: :DELETE do %>
+                    <%= image_tag 'icon/heart' ,class:"iine-size" %>
+                <% end %>
             <% else %>
-                <td><%= link_to 'いいね', create_like_path(post), method: :POST %></td>
+                <%= link_to create_like_path(post), method: :POST do %>
+                    <%= image_tag 'icon/heart-black' ,class:"iine-size"%>
+                <% end %>
             <% end %>
         <% else %>
-
+            <%= image_tag 'icon/heart-black' ,class:"iine-size"%>
         <% end %>
-        <p><span class="posted-like-count"><%= post.likes.count %></span></p>
+        <p style="margin-bottom:0px;"><span class="posted-like-count",style="padding-top:10px;"><%= post.likes.count %></span></p>
+        </div>
 
     </div>
      <!--   
@@ -27,6 +34,8 @@
         <td><%= post.user.name %></td>
         <td><%= post.title %></td>
         <td><%= post.content %></td>
+        <%= link_to post.giturl, post.giturl %>
+        <td><%= link_to 'いいね', create_like_path(post), method: :POST %></td>
     </tr>
     -->
 <% end %>

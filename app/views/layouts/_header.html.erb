@@ -2,19 +2,18 @@
     <div class="boxA">
       <div class="logo">
         <%= link_to root_path do %>
-          <%= image_tag 'img/Develotter_icon.png'%>
+          <%= image_tag 'img/Develotter_icon.png' ,style:"height: 64px; width: 64px;" %>
         <% end %>
         <%= link_to root_path do %>
-          <%= image_tag 'img/Develotter_logo.png'%>
+          <%= image_tag 'img/Develotter_logo.png' ,style:"margin-left:10px; height: 70.2px; width: 400px;" %>
         <% end %>
       </div>
       <nav>
         <ul class="global-nav">
           <% if logged_in? %>
             <li><a class="a1" href="index.html">ページ概要</a></li>
-            <li><a class="a1" href="index.html">投稿する</a></li>
             <li><a class="a1" style="padding-right:50px;" href="index.html">アカウント</a>
-              <ul class="nav2" style="z-index:100;">
+              <ul class="nav2" style="z-index:200;">
                 <li class="solid1"><%= link_to "プロフィール", current_user,class:"downlist" %></li>
                 <li class="solid1"><%= link_to "ユーザ設定", edit_user_path(current_user),class:"downlist" %></li>
                 <li class="solid1"><%= link_to "ログアウト", logout_path,class:"downlist", method: :delete%></li>
@@ -37,6 +36,7 @@
             </li>
             -->
           <% else %>
+            <li><a class="a1" href="index.html">ページ概要</a></li>
             <li><%= link_to "Log in", login_path %></li>
           <% end %>
         </ul>
